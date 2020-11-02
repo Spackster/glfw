@@ -58,6 +58,8 @@ typedef void* id;
  #define NSWindowStyleMaskMiniaturizable NSMiniaturizableWindowMask
  #define NSWindowStyleMaskResizable NSResizableWindowMask
  #define NSWindowStyleMaskTitled NSTitledWindowMask
+ #define NSEventSubtypeTabletPoint NSTabletPointEventSubtype
+ #define NSEventSubtypeTabletProximity NSTabletProximityEventSubtype
 #endif
 
 typedef VkFlags VkMacOSSurfaceCreateFlagsMVK;
