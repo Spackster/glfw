@@ -34,7 +34,6 @@
 
 #include <sys/select.h>
 
-#include <math.h>
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -1228,7 +1227,7 @@ static void processEvent(XEvent *event)
                             }
                         }
                     }
-                    }
+                }
                 else if (event->xcookie.evtype == XI_RawMotion)
                 {
                     XIRawEvent* re = event->xcookie.data;
@@ -1333,20 +1332,22 @@ static void processEvent(XEvent *event)
                         {
                             double xpos = window->virtualCursorPosX;
                             double ypos = window->virtualCursorPosY;
-                            if (XIMaskIsSet(re->valuators.mask, 0))
+
+                    if (XIMaskIsSet(re->valuators.mask, 0))
                             {
                                 xpos += *values;
                                 values++;
                             }
-                        if (XIMaskIsSet(re->valuators.mask, 1))
+
+                            if (XIMaskIsSet(re->valuators.mask, 1))
                                 ypos += *values;
 
                             _glfwInputCursorPos(window, xpos, ypos);
                         }
                     }
                 }
-
-            XFreeEventData(_glfw.x11.display, &event->xcookie);
+                XFreeEventData(_glfw.x11.display, &event->xcookie);
+            }
         }
 
         return;
@@ -3408,4 +3409,3 @@ GLFWAPI const char* glfwGetX11SelectionString(void)
     _GLFW_REQUIRE_INIT_OR_RETURN(NULL);
     return getSelectionString(_glfw.x11.PRIMARY);
 }
-
