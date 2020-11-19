@@ -158,10 +158,13 @@ information on what to include when reporting a bug.
  - [Win32] Bugfix: Monitor functions could return invalid values after
    configuration change (#1761)
  - [Win32] Bugfix: Initialization would segfault on Windows 8 (not 8.1) (#1775)
+ - [Win32] Bugfix: Duplicate size events were not filtered (#1610)
  - [Cocoa] Added support for `VK_EXT_metal_surface` (#1619)
  - [Cocoa] Added locating the Vulkan loader at runtime in an application bundle
  - [Cocoa] Moved main menu creation to GLFW initialization time (#1649)
  - [Cocoa] Changed `EGLNativeWindowType` from `NSView` to `CALayer` (#1169)
+ - [Cocoa] Changed F13 key to report Print Screen for cross-platform consistency
+   (#1786)
  - [Cocoa] Removed dependency on the CoreVideo framework
  - [Cocoa] Bugfix: `glfwSetWindowSize` used a bottom-left anchor point (#1553)
  - [Cocoa] Bugfix: Window remained on screen after destruction until event poll
@@ -174,6 +177,7 @@ information on what to include when reporting a bug.
    (#1635)
  - [Cocoa] Bugfix: Failing to retrieve the refresh rate of built-in displays
    could leak memory
+ - [Cocoa] Bugfix: Objective-C files were compiled as C with CMake 3.19 (#1787)
  - [X11] Bugfix: The CMake files did not check for the XInput headers (#1480)
  - [X11] Bugfix: Key names were not updated when the keyboard layout changed
    (#1462,#1528)
@@ -294,6 +298,7 @@ skills.
  - Eloi Marín Gratacós
  - Stefan Gustavson
  - Jonathan Hale
+ - hdf89shfdfs
  - Sylvain Hellegouarch
  - Matthew Henry
  - heromyth
@@ -318,11 +323,13 @@ skills.
  - Konstantin Käfer
  - Eric Larson
  - Francis Lecavalier
+ - Jong Won Lee
  - Robin Leffmann
  - Glenn Lewis
  - Shane Liesegang
  - Anders Lindqvist
  - Leon Linhart
+ - Marco Lizza
  - Eyal Lotem
  - Aaron Loucks
  - Luflosi
@@ -428,6 +435,8 @@ skills.
  - Waris
  - Jay Weisskopf
  - Frank Wille
+ - Andy Williams
+ - Joel Winarske
  - Tatsuya Yatagawa
  - Ryogo Yoshimura
  - Lukas Zanner
